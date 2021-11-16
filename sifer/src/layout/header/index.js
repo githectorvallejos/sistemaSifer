@@ -58,14 +58,14 @@ const Header = () => {
         xs={3}
       >
         <Button
-          onClick={
-            !isAuthenticated ? () => loginWithRedirect() : () => logout()
-          }
+          // onClick={
+          //   !isAuthenticated ? () => loginWithRedirect() : () => logout()
+          // }
+          onClick 
           color="primary"
           variant="contained"
           style={{ height: "3rem" }}
         >
-          {!isAuthenticated ? "Ingresar" : "Salir"}
         </Button>
       </Grid>
     </Grid>

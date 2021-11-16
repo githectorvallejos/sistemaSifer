@@ -112,11 +112,13 @@ const Header = (props) => {
       >
         <MenuItem onClick={handleMobileMenuClose}>
           <Typography
-            onClick={() => loginWithRedirect()}
+            onClick
             style={{ marginRight: "1rem" }}
           >
             Ingresar
           </Typography>
+
+
         </MenuItem>
       </Menu>
     </>
@@ -147,7 +149,7 @@ const Header = (props) => {
               <div className={classes.sectionDesktop}>
                 <IconButton color="inherit">
                   <Typography
-                    onClick={() => loginWithRedirect()}
+                    // onClick={() => loginWithRedirect()}
                     style={{ marginRight: "1rem" }}
                   >
                     Ingresar

@@ -7,7 +7,7 @@ import { Drawer } from "@material-ui/core";
 import LoadRoutes from "../config/LoadRoutes";
 
 import Header from "./HeaderDrawer";
-import HeaderAuth from "./HeaderDrawerAuth";
+// import HeaderAuth from "./HeaderDrawerAuth";
 import Footer from "./footer";
 import ListDrawer from "./ListDrawer";
 
@@ -71,9 +71,7 @@ const MiniDrawer = (props) => {
   const { classes, routes } = props;
   return (
     <div className={classes.root}>
-      {isAuthenticated ? (
-        <>
-          <HeaderAuth open={open} setOpen={setOpen} />
+      <Header open={open} setOpen={setOpen} />
 
           <Drawer
             variant="permanent"
@@ -91,11 +89,7 @@ const MiniDrawer = (props) => {
           >
             <ListDrawer />
           </Drawer>
-        </>
-      ) : (
-        <Header open={open} />
-      )}
-
+       
       <main className={classes.content}>
         <div className={classes.contentMin}>
           <LoadRoutes routes={routes} />
