@@ -1,0 +1,10 @@
+[build]
+  base = "/"
+  command = "yarn build"
+  publish = "build/"
+  environment = {REACT_APP_HOST = "https://nasini-back.herokuapp.com"}
+
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
