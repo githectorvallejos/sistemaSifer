@@ -54,7 +54,7 @@ const routes = [
         exact: true,
       },
       {
-        path: "/estado-producto/turno-actual",
+        path: "/funciones-playa/turno-actual",
         component: TurnoActual,
         exact: true,
       },

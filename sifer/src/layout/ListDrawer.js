@@ -24,6 +24,8 @@ import CreditCardIcon from '@material-ui/icons/CreditCard';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 import CircularProgress from "@material-ui/core/CircularProgress";
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
+import AccountBalanceWalletIcon from '@material-ui/icons/AccountBalanceWallet';
+import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -173,7 +175,7 @@ const ListDrawer = () => {
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
-                  <PersonIcon style={{ color: "#c4c4c4" }} />
+                  <AccountBalanceWalletIcon style={{ color: "#c4c4c4" }} />
                 </ListItemIcon>
                 <ListItemText primary="Buzón Dinero" />
               </ListItem>
@@ -185,7 +187,7 @@ const ListDrawer = () => {
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
-                  <PersonIcon style={{ color: "#c4c4c4" }} />
+                  <MonetizationOnIcon style={{ color: "#c4c4c4" }} />
                 </ListItemIcon>
                 <ListItemText primary="Gastos del Turno" />
               </ListItem>

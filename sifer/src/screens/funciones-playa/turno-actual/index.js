@@ -134,7 +134,7 @@ return (
                     textAlign: "center",
                     }}
                 >
-                    HISTORICOS DE ARRIBOS 
+                    PERSONAL
                 </Typography>
                 </Grid>
                 <Grid
@@ -146,171 +146,18 @@ return (
                 xs={6}
                 direction="column"
                 justifyContent="flex-end"
-                alignContent="flex-end"
-                >
-                <InputBase
-                    size="small"
-                    id="filled-size-small"
-                    placeholder="Número de cupón"
-                    // InputLabelProps={{  }}
-                    variant="outlined"
+                alignContent="flex-end">
                     
-                    endAdornment={<SearchIcon />}
-                />
                 </Grid>
             </Toolbar>
+            
+
             </AppBar>
         </Box>
         </Grid>
 
-        <TableContainer>
-        <Table size="medium">
-            <TableHead>
-            <TableRow>
-                <TableCell style={{ textAlign: "center" }}>
-                Nro de Camión
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>Ultimo arribo</TableCell>
-                <TableCell style={{ textAlign: "center" }}>Proximo arribo</TableCell>
-                <TableCell style={{ textAlign: "center" }}>Patente de Camión</TableCell>
-                <TableCell style={{ textAlign: "center" }}>Nombre de Chofer</TableCell>
-                <TableCell style={{ textAlign: "center" }}>Acciones</TableCell>
 
-            </TableRow>
-            </TableHead>
-            <TableBody>
-            
-                <TableRow>
-                <TableCell style={{ textAlign: "center" }}>
-                    {activo[0].nroCupon}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[0].tipoTarjeta}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[0].montoPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[0].formaPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[0].fechaPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                    <IconButton
-                    onClick
-                    style={{
-                        width: "1.5rem",
-                        height: "1.5rem",
-                        borderRadius: 5,
-                        backgroundColor: Theme.palette.primary.main,
-                        color: "#ffffff",
-                        marginLeft: "0.5rem",
-                    }}
-                    >
-                    <Delete style={{ height: "1.2rem", width: "1.2rem" }} />
-                    </IconButton>
-                </TableCell>
-                </TableRow>
-                <TableRow>
-                <TableCell style={{ textAlign: "center" }}>
-                    {activo[1].nroCupon}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[1].tipoTarjeta}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[1].montoPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[1].formaPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[1].fechaPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                    <IconButton
-                    onClick
-                    style={{
-                        width: "1.5rem",
-                        height: "1.5rem",
-                        borderRadius: 5,
-                        backgroundColor: Theme.palette.primary.main,
-                        color: "#ffffff",
-                        marginLeft: "0.5rem",
-                    }}
-                    >
-                    <Delete style={{ height: "1.2rem", width: "1.2rem" }} />
-                    </IconButton>
-                </TableCell>
-                </TableRow>
-                <TableRow>
-                <TableCell style={{ textAlign: "center" }}>
-                    {activo[2].nroCupon}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[2].tipoTarjeta}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[2].montoPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[2].formaPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[2].fechaPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                    <IconButton
-                    onClick
-                    style={{
-                        width: "1.5rem",
-                        height: "1.5rem",
-                        borderRadius: 5,
-                        backgroundColor: Theme.palette.primary.main,
-                        color: "#ffffff",
-                        marginLeft: "0.5rem",
-                    }}
-                    >
-                    <Delete style={{ height: "1.2rem", width: "1.2rem" }} />
-                    </IconButton>
-                </TableCell>
-                </TableRow>
-                <TableRow>
-                <TableCell style={{ textAlign: "center" }}>
-                    {activo[3].nroCupon}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[3].tipoTarjeta}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[3].montoPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[3].formaPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                {activo[3].fechaPago}
-                </TableCell>
-                <TableCell style={{ textAlign: "center" }}>
-                    <IconButton
-                    onClick
-                    style={{
-                        width: "1.5rem",
-                        height: "1.5rem",
-                        borderRadius: 5,
-                        backgroundColor: Theme.palette.primary.main,
-                        color: "#ffffff",
-                        marginLeft: "0.5rem",
-                    }}
-                    >
-                    <Delete style={{ height: "1.2rem", width: "1.2rem" }} />
-                    </IconButton>
-                </TableCell>
-                </TableRow>
-            </TableBody>
-        </Table>
-        </TableContainer>
+        
     </Grid>
     </Container>
 );
