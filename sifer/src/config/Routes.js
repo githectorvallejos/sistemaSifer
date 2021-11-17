@@ -8,6 +8,7 @@ import EditUserForm from "../screens/edit-user-form";
 import PagosTarjeta from "screens/funciones-playa/pagos-tarjeta";
 import NivelTanque from "screens/estado-producto/nivel-tanque";
 import Surtidor from "screens/surtidores";
+import IngresoCamion from "screens/estado-producto/ingreso-camion";
 
 
 const routes = [
@@ -44,6 +45,11 @@ const routes = [
       {
         path: "/estado-producto/nivel-tanque",
         component: NivelTanque,
+        exact: true,
+      },
+      {
+        path: "/estado-producto/ingreso-camion",
+        component: IngresoCamion,
         exact: true,
       },
       {

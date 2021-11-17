@@ -19,6 +19,9 @@ import PersonIcon from "@material-ui/icons/Person";
 import EnhancedEncryptionIcon from "@material-ui/icons/EnhancedEncryption";
 import ErrorIcon from "@material-ui/icons/Error";
 import { UserContext } from "../context/UserContext";
+// sino te agarra el icono desde '@mui/icons-material/nombreIcono' reemplaza @mui/icons-material/ por  @material-ui/icons/;
+import CreditCardIcon from '@material-ui/icons/CreditCard';
+import AttachFileIcon from '@material-ui/icons/AttachFile';
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 import { NavLink } from "react-router-dom";
@@ -91,7 +94,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="ingresoCamion"
+                to="/estado-producto/ingreso-camion"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -132,7 +135,7 @@ const ListDrawer = () => {
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
-                  <LocalLibraryIcon style={{ color: "#c4c4c4" }} />
+                  <AttachFileIcon  style={{ color: "#c4c4c4" }} />
                 </ListItemIcon>
                 <ListItemText primary="Planilla de Turno" />
               </ListItem>
@@ -145,7 +148,7 @@ const ListDrawer = () => {
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
-                  <PersonIcon style={{ color: "#c4c4c4" }} />
+                  <CreditCardIcon style={{ color: "#c4c4c4" }} />
                 </ListItemIcon>
                 <ListItemText primary="Pagos Tarjeta" />
               </ListItem>
@@ -158,7 +161,7 @@ const ListDrawer = () => {
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
-                  <PersonIcon style={{ color: "#c4c4c4" }} />
+                  <CreditCardIcon style={{ color: "#c4c4c4" }} />
                 </ListItemIcon>
                 <ListItemText primary="Cuenta Corriente" />
               </ListItem>
