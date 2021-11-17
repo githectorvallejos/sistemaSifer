@@ -141,7 +141,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="pagosTarjeta"
+                to="/funciones-playa/pagos-tarjeta"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
