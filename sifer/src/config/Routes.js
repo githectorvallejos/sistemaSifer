@@ -6,6 +6,8 @@ import CreateUser from "../screens/create-user";
 import EditUser from "../screens/edit-user";
 import EditUserForm from "../screens/edit-user-form";
 import PagosTarjeta from "screens/funciones-playa/pagos-tarjeta";
+import NivelTanque from "screens/estado-producto/nivel-tanque";
+import Surtidor from "screens/surtidores";
 
 
 const routes = [
@@ -37,6 +39,16 @@ const routes = [
       {
         path: "/funciones-playa/pagos-tarjeta",
         component: PagosTarjeta,
+        exact: true,
+      },
+      {
+        path: "/estado-producto/nivel-tanque",
+        component: NivelTanque,
+        exact: true,
+      },
+      {
+        path: "/surtidores",
+        component: Surtidor,
         exact: true,
       },
       {

@@ -1,4 +1,3 @@
-import { memo, useState } from "react";
 import {
   Container,
   Grid,
@@ -9,19 +8,17 @@ import {
   InputBase,
   TableContainer,
   Table,
-  TextField,
   TableCell,
   TableBody,
   TableRow,
   TableHead,
   IconButton,
-  AccordionDetails,
 } from "@material-ui/core";
 //import CheckIcon from "@material-ui/icons/Check";
 import SearchIcon from "@material-ui/icons/SearchOutlined";
 
 import Theme from "theme";
-import { AddIcCallOutlined, Delete } from "@material-ui/icons";
+import { Delete } from "@material-ui/icons";
 
 const PagosTarjeta = () => {
 

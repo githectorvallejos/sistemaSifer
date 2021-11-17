@@ -78,7 +78,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="nivelTanque"
+                to="/estado-producto/nivel-tanque"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
