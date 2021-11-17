@@ -49,7 +49,7 @@ import {
       <Container
         maxWidth="lg"
         style={{
-          marginTop: "5rem",
+          marginTop: "10rem",
           borderRadius: 10,
           backgroundColor: "#ffffff00",
           minHeight: "30rem",
