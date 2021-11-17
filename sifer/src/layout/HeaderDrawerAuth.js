@@ -12,7 +12,7 @@ import {
   Grid,
 } from "@material-ui/core";
 import { useAuth0 } from "@auth0/auth0-react";
-import Logo from "../assets/img/Logo.svg";
+import Logo from "../assets/img/logo.png";
 
 import MenuIcon from "@material-ui/icons/Menu";
 

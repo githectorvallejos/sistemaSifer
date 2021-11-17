@@ -18,7 +18,6 @@ const drawerWidth = 360;
 const styles = (theme) => ({
   root: {
     display: "flex",
-    backgroundColor: "#F0F0F0",
     height: "100%",
     width:"100%"
   },
@@ -35,7 +34,8 @@ const styles = (theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    backgroundColor: "#474747",
+    // backgroundColor: "#474747",
+    backgroundColor: "green",
   },
   drawerClose: {
     marginTop: "5rem",

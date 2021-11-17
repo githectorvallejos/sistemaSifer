@@ -63,7 +63,7 @@ const ListDrawer = () => {
           <ListItem
             button onClick={handleOpenGestion1}
             component={NavLink}
-            to=""
+            to="estadoProducto"
             activeClassName="Mui-selected"
           >
             <ListItemIcon>
@@ -78,7 +78,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to=""
+                to="nivelTanque"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -91,7 +91,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to=""
+                to="ingresoCamion"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -116,7 +116,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to=""
+                to="turnoActual"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -128,7 +128,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to=""
+                to="planillaDeTurno"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -141,7 +141,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to=""
+                to="pagosTarjeta"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -154,7 +154,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to=""
+                to="cuentaCorriente"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -166,7 +166,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to=""
+                to="buzonDinero"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -178,7 +178,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to=""
+                to="gastosDelTurno"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -192,7 +192,7 @@ const ListDrawer = () => {
           <ListItem
             button onClick={handleOpenGestion3}
             component={NavLink}
-            to=""
+            to="rendicionesDelTurno"
             activeClassName="Mui-selected"
           >
             <ListItemIcon>
@@ -211,7 +211,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to=""
+                to="/totalesParciales"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -224,7 +224,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to=""
+                to="/cierreParcial"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -238,7 +238,7 @@ const ListDrawer = () => {
           <ListItem
             button
             component={NavLink}
-            to="/reportes"
+            to="/surtidores"
             activeClassName="Mui-selected"
           >
             <ListItemIcon>

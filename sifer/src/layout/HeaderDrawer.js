@@ -12,7 +12,7 @@ import {
   Grid,
 } from "@material-ui/core";
 import { useAuth0 } from "@auth0/auth0-react";
-import Logo from "../assets/img/Logo.svg";
+import Logo from "../assets/img/logo.png";
 
 import { Link } from "react-router-dom";
 
@@ -22,7 +22,7 @@ const drawerWidth = 220;
 
 const styles = (theme) => ({
   container: {
-    backgroundColor: theme.paletteCustom.backgroundBlack.main,
+    backgroundColor: "#FFFFFF",
     height: "5rem",
     justifyContent: "space-between",
   },
@@ -81,6 +81,10 @@ const styles = (theme) => ({
     [theme.breakpoints.up("md")]: {
       display: "none",
     },
+  textButton: {
+    flexGrow: 1,
+    textAlign: "center",
+  }
   },
 });
 
@@ -113,9 +117,9 @@ const Header = (props) => {
         <MenuItem onClick={handleMobileMenuClose}>
           <Typography
             onClick
-            style={{ marginRight: "1rem" }}
+            style={{ marginRight: "1rem"}}
           >
-            Ingresar
+            INGRESAR
           </Typography>
 
 
@@ -147,10 +151,12 @@ const Header = (props) => {
 
             <Grid item>
               <div className={classes.sectionDesktop}>
-                <IconButton color="inherit">
+                <IconButton color="primary" style={{ backgroundColor: "green", marginRight: "0.2rem" }}>
                   <Typography
                     // onClick={() => loginWithRedirect()}
-                    style={{ marginRight: "1rem" }}
+                    alignItems="center"
+                    className={classes.textButton}
+                    style={{ color: "#FFFFFF"}}
                   >
                     Ingresar
                   </Typography>
