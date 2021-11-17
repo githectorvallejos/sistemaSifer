@@ -34,7 +34,7 @@ const styles = (theme) => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    // backgroundColor: "#474747",
+    
     backgroundColor: "green",
   },
   drawerClose: {

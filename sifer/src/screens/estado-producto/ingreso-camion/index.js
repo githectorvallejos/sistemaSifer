@@ -1,233 +1,319 @@
-import { useState, useEffect } from "react";
 import {
-    Container,
-    Grid,
-    Box,
-    Typography,
-  } from "@material-ui/core";
+  Container,
+  Grid,
+  Box,
+  AppBar,
+  Toolbar,
+  Typography,
+  InputBase,
+  TableContainer,
+  Table,
+  TableCell,
+  TableBody,
+  TableRow,
+  TableHead,
+  IconButton,
+} from "@material-ui/core";
+//import CheckIcon from "@material-ui/icons/Check";
+import SearchIcon from "@material-ui/icons/SearchOutlined";
 
-// import Box from '@mui/material/Box';
-import PropTypes from 'prop-types';
-import Collapse from '@mui/material/Collapse';
-import IconButton from '@mui/material/IconButton';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp'
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import Theme from "theme";
+import { Delete } from "@material-ui/icons";
 
-  
-import { LinearProgress } from '@mui/material';
-import { height } from "@mui/system";
+const PagosTarjeta = () => {
 
-  
-  // import Theme from "theme";
-  // import { Delete } from "@material-ui/icons";
-  
-  const IngresoCamion = () => {
-  
-      const activo = [
-          {
-              nroCupon: 1001,
-              tipoTarjeta: "VISA",
-              montoPago: "$980",
-              formaPago: "Debito",
-              fechaPago: "16/11/2021"
-          },
-          {
-              nroCupon: 1002,
-              tipoTarjeta: "MASTERCARD",
-              montoPago: "$1080",
-              formaPago: "Debito",
-              fechaPago: "17/11/2021"
-          },
-          {
-              nroCupon: 1003,
-              tipoTarjeta: "NARANJA",
-              montoPago: "$3500",
-              formaPago: "Debito",
-              fechaPago: "17/11/2021"
-          }
-      ];
-      console.log("la Data", activo);
-
-      const [progress, setProgress] = useState(10);
-
-  
-
-
-      function LinearProgressWithLabel(props) {
-        // useEffect(() => {
-        //     const timer = setInterval(() => {
-        //       setProgress((prevProgress) => (prevProgress >= 100 ? 10 : prevProgress + 10));
-        //     }, 800);
-        //     return () => {
-        //       clearInterval(timer);
-        //     };
-        //   }, []);
-        return (
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Box sx={{ width: '100%', mr: 1 }}>
-              <LinearProgress variant="determinate" {...props} />
-            </Box>
-            <Box sx={{ minWidth: 35 }}>
-              <Typography variant="body2" color="text.secondary">{`${Math.round(
-                props.value,
-              )}%`}</Typography>
-            </Box>
-          </Box>
-        );
+    const activo = [
+        {
+            nroCupon: 1001,
+            tipoTarjeta: "15/11/2021",
+            montoPago: "-",
+            formaPago: "AB123CD",
+            fechaPago: "Juan Perez"
+        },
+        {
+            nroCupon: 1002,
+            tipoTarjeta: "01/11/2021",
+            montoPago: "15/11/2021",
+            formaPago: "CD332AA",
+            fechaPago: "Jorge Mendez"
+        },
+        {
+            nroCupon: 1003,
+            tipoTarjeta: "01/10/2021",
+            montoPago: "15/10/2021",
+            formaPago: "DE221AB",
+            fechaPago: "Pedro Sanchez"
+        },
+        {
+          nroCupon: 1003,
+          tipoTarjeta: "15/09/2021",
+          montoPago: "01/10/2021",
+          formaPago: "AC123CD",
+          fechaPago: "Juan Perez"
       }
+    ];
+    console.log("la Data", activo);
+ 
 
-    // Funcion Tabla
-    function createData(name, calories, fat, carbs, protein, price) {
-        return {
-          name,
-          calories,
-          fat,
-          carbs,
-          protein,
-          price,
-          history: [
-            {
-              date: 'Onda Gas',
-              customerId: 'Bahia Blanca',
-              amount: 904056,
-            },
-            {
-              date: 'Don Antonio',
-              customerId: 'Mendoza TGS',
-              amount: 258796,
-            },
-            {
-                date: 'SIFER GAS',
-                customerId: 'Mendoza TGS',
-                amount: 1006598,
-              },
-              {
-                date: 'Expreso Cobra',
-                customerId: 'Bahia Blanca',
-                amount: 216548,
-              },
-          ],
-        };
-      }
-      
-      function Row(props) {
-        const { row } = props;
-        const [open, setOpen] = useState(false);
-      
-        return (
-          <>
-            <TableRow sx={{ '& > *': { borderBottom: 'unset' } }}>
-              <TableCell>
-                <IconButton
-                  aria-label="expand row"
-                  size="small"
-                  onClick={() => setOpen(!open)}
-                >
-                  {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                </IconButton>
-              </TableCell>
-              <TableCell align="center" component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="center">{row.calories}</TableCell>
-              <TableCell align="center">{row.fat}</TableCell>
-              <TableCell align="center">{row.carbs}</TableCell>
-              <TableCell align="center">{row.protein}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                  <Box sx={{ margin: 1 }}>
-                    <Typography variant="h6" gutterBottom component="div">
-                      Detalle
-                    </Typography>
-                    <Table size="small" aria-label="purchases">
-                      <TableHead>
-                        <TableRow>
-                          <TableCell align="center">Transporte</TableCell>
-                          <TableCell align="center">Origen Producto</TableCell>
-                          <TableCell align="center">Precintos</TableCell>
-                          <TableCell align="center">Nro Remito</TableCell>
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {row.history.map((historyRow) => (
-                          <TableRow key={historyRow.date}>
-                            <TableCell align="center" component="th" scope="row">
-                              {historyRow.date}
-                            </TableCell>
-                            <TableCell align="center">{historyRow.customerId}</TableCell>
-                            <TableCell align="center">{historyRow.amount}</TableCell>
-                            <TableCell align="center">
-                              {Math.round(historyRow.amount * row.price * 100) / 100}
-                            </TableCell>
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </Box>
-                </Collapse>
-              </TableCell>
-            </TableRow>
-          </>
-        );
-      }
-      
-      Row.propTypes = {
-        row: PropTypes.shape({
-          calories: PropTypes.number.isRequired,
-          carbs: PropTypes.number.isRequired,
-          fat: PropTypes.number.isRequired,
-          history: PropTypes.arrayOf(
-            PropTypes.shape({
-              amount: PropTypes.number.isRequired,
-              customerId: PropTypes.string.isRequired,
-              date: PropTypes.string.isRequired,
-            }),
-          ).isRequired,
-          name: PropTypes.string.isRequired,
-          price: PropTypes.number.isRequired,
-          protein: PropTypes.number.isRequired,
-        }).isRequired,
-      };
-      
-      const rows = [
-        createData('20-10-2021', 5607, 23056, 12300, 96, 13),
-        createData('27-10-2021', 8607, 15607, 8100, 65, 13.5),
-        createData('01-11-2021', 6156, 24500, 13150, 98, 14),
-        createData('05-11-2021', 3215, 9650, 5200, 32, 17),
-        createData('10-11-2021', 6400, 19650, 10023, 73, 16),
-      ];
-      
-   
-  
-    return (
-        <Container
-        maxWidth="lg"
+  return (
+    <Container
+      maxWidth="lg"
+      style={{
+        marginTop: "5rem",
+        borderRadius: 10,
+        backgroundColor: "#ffffff00",
+        minHeight: "30rem",
+        paddingTop: "1rem",
+        marginBottom: "1rem",
+      }}
+    >
+      <Grid
+        container
+        item
         style={{
-          marginTop: "7rem",
+          backgroundColor: "#ffffff",
+          marginTop: "1rem",
+          boxShadow: "0px 5px 5px rgba(0, 0, 0, .2)",
           borderRadius: 10,
         }}
       >
-        
-          <Box component="span" sx={{ p: 2, border: '1px dashed grey' }}>
-            <Button>Save</Button>
-        </Box>
-       
-  
-        
-  
-                
-      </Container>
-    );
-  };
-  
-  export default IngresoCamion;
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          alignContent="center"
+          style={{
+            borderTopLeftRadius: 10,
+            borderTopRightRadius: 10,
+            backgroundColor: "#417351",
+            height: "5rem",
+          }}
+        >
+          <Box
+            sx={{ flexGrow: 1 }}
+            style={{
+              borderTopLeftRadius: 10,
+              borderTopRightRadius: 10,
+              height: "5rem",
+              marginTop: -65,
+              background: "transparent",
+              boxShadow: "none",
+            }}
+          >
+            <AppBar
+              position="static"
+              style={{
+                borderTopLeftRadius: 10,
+                borderTopRightRadius: 10,
+                height: "5rem",
+                marginTop: 40,
+                background: "transparent",
+                boxShadow: "none",
+              }}
+            >
+              <Toolbar>
+                <Grid
+                  xl={6}
+                  lg={6}
+                  md={6}
+                  sm={6}
+                  xs={6}
+                  container
+                  direction="column"
+                  justifyContent="flex-start"
+                  alignContent="flex-start"
+                  style={{}}
+                >
+                  <Typography
+                    variant="h5"
+                    style={{
+                      marginTop: "1rem",
+                      height: "3rem",
+                      color: "white",
+                      textAlign: "center",
+                    }}
+                  >
+                    HISTORICOS DE ARRIBOS 
+                  </Typography>
+                </Grid>
+                <Grid
+                  container
+                  xl={6}
+                  lg={6}
+                  md={6}
+                  sm={6}
+                  xs={6}
+                  direction="column"
+                  justifyContent="flex-end"
+                  alignContent="flex-end"
+                >
+                  <InputBase
+                    size="small"
+                    id="filled-size-small"
+                    placeholder="Número de cupón"
+                    // InputLabelProps={{  }}
+                    variant="outlined"
+                    
+                    endAdornment={<SearchIcon />}
+                  />
+                </Grid>
+              </Toolbar>
+            </AppBar>
+          </Box>
+        </Grid>
+
+        <TableContainer>
+          <Table size="medium">
+            <TableHead>
+              <TableRow>
+                <TableCell style={{ textAlign: "center" }}>
+                  Nro de Camión
+                </TableCell>
+                <TableCell style={{ textAlign: "center" }}>Ultimo arribo</TableCell>
+                <TableCell style={{ textAlign: "center" }}>Proximo arribo</TableCell>
+                <TableCell style={{ textAlign: "center" }}>Patente de Camión</TableCell>
+                <TableCell style={{ textAlign: "center" }}>Nombre de Chofer</TableCell>
+                <TableCell style={{ textAlign: "center" }}>Acciones</TableCell>
+
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              
+                <TableRow>
+                  <TableCell style={{ textAlign: "center" }}>
+                    {activo[0].nroCupon}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[0].tipoTarjeta}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[0].montoPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[0].formaPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[0].fechaPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                    <IconButton
+                      onClick
+                      style={{
+                        width: "1.5rem",
+                        height: "1.5rem",
+                        borderRadius: 5,
+                        backgroundColor: Theme.palette.primary.main,
+                        color: "#ffffff",
+                        marginLeft: "0.5rem",
+                      }}
+                    >
+                      <Delete style={{ height: "1.2rem", width: "1.2rem" }} />
+                    </IconButton>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell style={{ textAlign: "center" }}>
+                    {activo[1].nroCupon}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[1].tipoTarjeta}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[1].montoPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[1].formaPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[1].fechaPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                    <IconButton
+                      onClick
+                      style={{
+                        width: "1.5rem",
+                        height: "1.5rem",
+                        borderRadius: 5,
+                        backgroundColor: Theme.palette.primary.main,
+                        color: "#ffffff",
+                        marginLeft: "0.5rem",
+                      }}
+                    >
+                      <Delete style={{ height: "1.2rem", width: "1.2rem" }} />
+                    </IconButton>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell style={{ textAlign: "center" }}>
+                    {activo[2].nroCupon}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[2].tipoTarjeta}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[2].montoPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[2].formaPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[2].fechaPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                    <IconButton
+                      onClick
+                      style={{
+                        width: "1.5rem",
+                        height: "1.5rem",
+                        borderRadius: 5,
+                        backgroundColor: Theme.palette.primary.main,
+                        color: "#ffffff",
+                        marginLeft: "0.5rem",
+                      }}
+                    >
+                      <Delete style={{ height: "1.2rem", width: "1.2rem" }} />
+                    </IconButton>
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell style={{ textAlign: "center" }}>
+                    {activo[3].nroCupon}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[3].tipoTarjeta}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[3].montoPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[3].formaPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                  {activo[3].fechaPago}
+                  </TableCell>
+                  <TableCell style={{ textAlign: "center" }}>
+                    <IconButton
+                      onClick
+                      style={{
+                        width: "1.5rem",
+                        height: "1.5rem",
+                        borderRadius: 5,
+                        backgroundColor: Theme.palette.primary.main,
+                        color: "#ffffff",
+                        marginLeft: "0.5rem",
+                      }}
+                    >
+                      <Delete style={{ height: "1.2rem", width: "1.2rem" }} />
+                    </IconButton>
+                  </TableCell>
+                </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Grid>
+    </Container>
+  );
+};
+
+export default PagosTarjeta;

@@ -23,7 +23,7 @@ import { UserContext } from "../context/UserContext";
 import CreditCardIcon from '@material-ui/icons/CreditCard';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 import CircularProgress from "@material-ui/core/CircularProgress";
-
+import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import { NavLink } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -98,7 +98,7 @@ const ListDrawer = () => {
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
-                  <PersonIcon style={{ color: "#c4c4c4" }} />
+                  <LocalShippingIcon style={{ color: "#c4c4c4" }} />
                 </ListItemIcon>
                 <ListItemText primary="Ingreso Camion" />
               </ListItem>
@@ -119,7 +119,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="turnoActual"
+                to="/funciones-playa/turno-actual"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>

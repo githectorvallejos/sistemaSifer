@@ -9,6 +9,7 @@ import PagosTarjeta from "screens/funciones-playa/pagos-tarjeta";
 import NivelTanque from "screens/estado-producto/nivel-tanque";
 import Surtidor from "screens/surtidores";
 import IngresoCamion from "screens/estado-producto/ingreso-camion";
+import TurnoActual from "screens/funciones-playa/turno-actual";
 
 
 const routes = [
@@ -50,6 +51,11 @@ const routes = [
       {
         path: "/estado-producto/ingreso-camion",
         component: IngresoCamion,
+        exact: true,
+      },
+      {
+        path: "/estado-producto/turno-actual",
+        component: TurnoActual,
         exact: true,
       },
       {

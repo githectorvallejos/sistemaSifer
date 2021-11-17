@@ -14,7 +14,7 @@ const token = usuario?.user_token;
 
 if (process.env.NODE_ENV === "development") {
   //baseURL = `${API_URL}:${API_PORT}`;
-  baseURL = `https://nasini-back.herokuapp.com`;
+  baseURL = ``;
 } else baseURL = process.env.REACT_APP_HOST;
 
 export default axios.create({
