@@ -119,7 +119,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="turnoActual"
+                to="/funciones-playa/turno-actual"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>

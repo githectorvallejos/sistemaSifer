@@ -6,6 +6,7 @@ import CreateUser from "../screens/create-user";
 import EditUser from "../screens/edit-user";
 import EditUserForm from "../screens/edit-user-form";
 import PagosTarjeta from "screens/funciones-playa/pagos-tarjeta";
+import TurnoActual from "../screens/funciones-playa/turno-actual";
 import NivelTanque from "screens/estado-producto/nivel-tanque";
 import Surtidor from "screens/surtidores";
 import IngresoCamion from "screens/estado-producto/ingreso-camion";
@@ -40,6 +41,11 @@ const routes = [
       {
         path: "/funciones-playa/pagos-tarjeta",
         component: PagosTarjeta,
+        exact: true,
+      },
+      {
+        path: "/funciones-playa/turno-actual",
+        component: TurnoActual,
         exact: true,
       },
       {
