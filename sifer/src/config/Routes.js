@@ -10,6 +10,7 @@ import NivelTanque from "screens/estado-producto/nivel-tanque";
 import Surtidor from "screens/surtidores";
 import IngresoCamion from "screens/estado-producto/ingreso-camion";
 import TurnoActual from "screens/funciones-playa/turno-actual";
+import Login from "screens/login/iniciar-sesion";
 
 
 const routes = [
@@ -21,6 +22,11 @@ const routes = [
       {
         path: "/",
         component: Home,
+        exact: true,
+      },
+      {
+        path: "/login/iniciar-sesion",
+        component: Login,
         exact: true,
       },
       {
