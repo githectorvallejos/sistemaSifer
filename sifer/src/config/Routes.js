@@ -10,6 +10,8 @@ import NivelTanque from "screens/estado-producto/nivel-tanque";
 import Surtidor from "screens/surtidores";
 import IngresoCamion from "screens/estado-producto/ingreso-camion";
 import TurnoActual from "screens/funciones-playa/turno-actual";
+import GastosTurno from "screens/funciones-playa/gastos-turno";
+
 import Login from "screens/login/iniciar-sesion";
 
 
@@ -64,6 +66,12 @@ const routes = [
         component: TurnoActual,
         exact: true,
       },
+      {
+        path: "/funciones-playa/gastos-turno",
+        component: GastosTurno,
+        exact: true,
+      },
+      
       {
         path: "/surtidores",
         component: Surtidor,

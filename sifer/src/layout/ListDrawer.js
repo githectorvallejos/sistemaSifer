@@ -183,7 +183,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="gastosDelTurno"
+                to="/funciones-playa/gastos-turno"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
