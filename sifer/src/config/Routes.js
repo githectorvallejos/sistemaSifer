@@ -14,6 +14,10 @@ import GastosTurno from "screens/funciones-playa/gastos-turno";
 
 import Login from "screens/login/iniciar-sesion";
 import CuentasCorrientes from "screens/funciones-playa/cuentas-corrientes";
+import PlanillaTurno from "screens/funciones-playa/planilla-turno";
+import BuzonDinero from "screens/funciones-playa/buzon-dinero";
+import CierreParcial from "screens/rendiciones-turno/cierre-parcial";
+import TotalesParciales from "screens/rendiciones-turno/totales-parciales";
 
 
 const routes = [
@@ -68,6 +72,16 @@ const routes = [
         exact: true,
       },
       {
+        path: "/funciones-playa/planilla-turno",
+        component: PlanillaTurno,
+        exact: true,
+      },
+      {
+        path: "/funciones-playa/buzon-dinero",
+        component: BuzonDinero,
+        exact: true,
+      },
+      {
         path: "/funciones-playa/gastos-turno",
         component: GastosTurno,
         exact: true,
@@ -75,6 +89,16 @@ const routes = [
       {
         path: "/funciones-playa/cuentas-corrientes",
         component: CuentasCorrientes,
+        exact: true,
+      },
+      {
+        path: "/rendiciones-turno/cierre-parcial",
+        component: CierreParcial,
+        exact: true,
+      },
+      {
+        path: "/rendiciones-turno/totales-parciales",
+        component: TotalesParciales,
         exact: true,
       },
       {

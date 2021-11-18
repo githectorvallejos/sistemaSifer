@@ -131,7 +131,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="planillaDeTurno"
+                to="/funciones-playa/planilla-turno"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -157,7 +157,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="/funciones-playa/pagos-tarjeta"
+                to="/funciones-playa/cuentas-corrientes"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -169,7 +169,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="buzonDinero"
+                to="/funciones-playa/buzon-dinero"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -211,7 +211,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="/totalesParciales"
+                to="/rendiciones-turno/totales-parciales"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -224,7 +224,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="/cierreParcial"
+                to="/rendiciones-turno/cierre-parcial"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
