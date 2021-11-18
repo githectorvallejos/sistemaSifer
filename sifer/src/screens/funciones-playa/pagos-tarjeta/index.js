@@ -56,27 +56,27 @@ const PagosTarjeta = () => {
  
 
   return (
-    <Container
-      maxWidth="lg"
-      style={{
-        marginTop: "5rem",
-        borderRadius: 10,
-        backgroundColor: "#ffffff00",
-        minHeight: "30rem",
-        paddingTop: "1rem",
-        marginBottom: "1rem",
-      }}
-    >
-      <Grid
-        container
-        item
+      <Container
+        maxWidth="lg"
         style={{
-          backgroundColor: "#ffffff",
-          marginTop: "1rem",
-          boxShadow: "0px 5px 5px rgba(0, 0, 0, .2)",
+          marginTop: "5rem",
           borderRadius: 10,
+          backgroundColor: "#ffffff00",
+          minHeight: "30rem",
+          paddingTop: "1rem",
+          marginBottom: "1rem",
         }}
       >
+        <Grid
+          container
+          item
+          style={{
+            backgroundColor: "#ffffff",
+            marginTop: "1rem",
+            boxShadow: "0px 5px 5px rgba(0, 0, 0, .2)",
+            borderRadius: 10,
+          }}
+        >
         <Grid
           container
           direction="row"

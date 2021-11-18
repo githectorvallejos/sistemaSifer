@@ -67,9 +67,7 @@ const ListDrawer = () => {
         <List component="nav" className={classes.root}>
           <ListItem
             button onClick={handleOpenGestion1}
-            component={NavLink}
-            to="estadoProducto"
-            activeClassName="Mui-selected"
+            
           >
             <ListItemIcon>
               <DataUsageIcon style={{ color: "#c4c4c4" }} />
@@ -159,7 +157,7 @@ const ListDrawer = () => {
                 button
                 className={classes.nested}
                 component={NavLink}
-                to="cuentaCorriente"
+                to="/funciones-playa/pagos-tarjeta"
                 activeClassName="Mui-selected"
               >
                 <ListItemIcon>
@@ -196,10 +194,7 @@ const ListDrawer = () => {
 
           <ListItem
             button onClick={handleOpenGestion3}
-            component={NavLink}
-            to="rendicionesDelTurno"
-            activeClassName="Mui-selected"
-          >
+           >
             <ListItemIcon>
               <DataUsageIcon style={{ color: "#c4c4c4" }} />
             </ListItemIcon>

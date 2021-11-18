@@ -13,6 +13,7 @@ import TurnoActual from "screens/funciones-playa/turno-actual";
 import GastosTurno from "screens/funciones-playa/gastos-turno";
 
 import Login from "screens/login/iniciar-sesion";
+import CuentasCorrientes from "screens/funciones-playa/cuentas-corrientes";
 
 
 const routes = [
@@ -71,7 +72,11 @@ const routes = [
         component: GastosTurno,
         exact: true,
       },
-      
+      {
+        path: "/funciones-playa/cuentas-corrientes",
+        component: CuentasCorrientes,
+        exact: true,
+      },
       {
         path: "/surtidores",
         component: Surtidor,

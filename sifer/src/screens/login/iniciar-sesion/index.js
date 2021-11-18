@@ -12,7 +12,6 @@ import {
 } from "@material-ui/core";
 import LoginStyles from "./loginStyles";
 
-import { style } from "@mui/system";
 // import { BRAND_NAME } from '../constants'
 
 
@@ -41,16 +40,10 @@ const Login = () => {
     // render() {
     //     
     return (
-        <Container maxWidth="md" style={{ marginBottom: "3rem", marginTop: "7rem"}}>
-          {/* <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-            spacing={4}
-            // className={classes.root}
-          > */}
-            <Grid>
+        <Container maxWidth="fluid"
+      className={classes.container}
+    >
+      <Grid>
                 <AppBar className={classes.appBar}>
                     <Toolbar>
                         <Grid container justify="center" wrap="wrap">
@@ -139,8 +132,8 @@ const Login = () => {
                     </Grid>
                 </Grid>
             </Grid>
-        {/* </Grid> */}
-        </Container>
+    </Container>
+        
         );
     }
 

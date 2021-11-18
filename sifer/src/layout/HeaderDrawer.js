@@ -152,14 +152,18 @@ const Header = (props) => {
             <Grid item>
               <div className={classes.sectionDesktop}>
                 <IconButton color="primary" style={{ backgroundColor: "green", marginRight: "0.2rem" }}>
+                  <Link to="/login/iniciar-sesion">
                   <Typography
                     // onClick={() => loginWithRedirect()}
+                    
                     alignItems="center"
                     className={classes.textButton}
                     style={{ color: "#FFFFFF"}}
                   >
                     Ingresar
                   </Typography>
+                  </Link>
+                  
                 </IconButton>
               </div>
               <div className={classes.sectionMobile}>
