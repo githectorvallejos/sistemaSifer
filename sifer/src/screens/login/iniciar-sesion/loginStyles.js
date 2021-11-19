@@ -4,6 +4,21 @@ export default makeStyles((theme) => ({
         justifyContent: "center",
         minHeight: "90vh",
         },
+    container: {
+        marginTop: "5rem",
+        height: "90%",
+    backgroundImage: `url("https://www.sifergas.com.ar/dataEst/images/11.jpg")`,
+        backgroundSize: "cover",
+        display: "grid",
+    placeContent: "center",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+        },
+    div: {
+        display: "flex",
+        flexDirection: "column",
+        alignItems:"center"
+    },
     buttonBlock: {
         width: "100%",
         },
@@ -18,8 +33,8 @@ export default makeStyles((theme) => ({
          color: "white",
          backgroundColor: "primary",
          width: "310px",
-         marginLeft: "205px",
          borderTopRightRadius: "8px",
          borderTopLeftRadius: "8px",
+         
     }
 }));

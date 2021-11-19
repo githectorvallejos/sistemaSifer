@@ -12,6 +12,7 @@ import Footer from "./footer";
 import ListDrawer from "./ListDrawer";
 
 import { useAuth0 } from "@auth0/auth0-react";
+import HeaderLogeado from "./HeaderLogeado";
 
 const drawerWidth = 360;
 
@@ -65,12 +66,15 @@ const styles = (theme) => ({
 });
 
 const MiniDrawer = (props) => {
-  const { isAuthenticated } = useAuth0();
+  const [logeado, setLogeado] = useState(true);
+ 
   const [open, setOpen] = useState(true);
 
   const { classes, routes } = props;
   return (
     <div className={classes.root}>
+      {logeado ? (
+        <>
       <Header open={open} setOpen={setOpen} />
 
           <Drawer
@@ -89,6 +93,10 @@ const MiniDrawer = (props) => {
           >
             <ListDrawer />
           </Drawer>
+          </>
+      ) : (
+        <HeaderLogeado open={open} />
+      )}
        
       <main className={classes.content}>
         <div className={classes.contentMin}>

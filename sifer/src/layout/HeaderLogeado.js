@@ -14,8 +14,16 @@ import {
 import { useAuth0 } from "@auth0/auth0-react";
 import Logo from "../assets/img/logo.png";
 
+import MenuIcon from "@material-ui/icons/Menu";
+
 import { Link } from "react-router-dom";
 
+import Badge from "@material-ui/core/Badge";
+
+import SearchIcon from "@material-ui/icons/Search";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import MailIcon from "@material-ui/icons/Mail";
+import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
 
 const drawerWidth = 220;
@@ -45,7 +53,7 @@ const styles = (theme) => ({
   },
   menuButton: {
     marginLeft: 12,
-    marginRight: 20,
+    // marginRight: 12,
   },
   menuButtonIconClosed: {
     transition: theme.transitions.create(["transform"], {
@@ -81,18 +89,25 @@ const styles = (theme) => ({
     [theme.breakpoints.up("md")]: {
       display: "none",
     },
-  textButton: {
-    flexGrow: 1,
-    textAlign: "center",
-  }
   },
 });
 
 const Header = (props) => {
   //   const classes = styles();
-  const { open, classes } = props;
-  const [logeado, setLogeado] = useState(false);
+  const { open, setOpen, classes } = props;
+  const { logout } = useAuth0();
 
+  const [anchorEl, setAnchorEl] = useState(null);
+  const handleDrawer = () => {
+    setOpen(!open);
+  };
+
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
 
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -114,20 +129,53 @@ const Header = (props) => {
         open={isMobileMenuOpen}
         onClose={handleMobileMenuClose}
       >
+        <MenuItem
+          component={Link}
+          to="/create-user"
+          onClick={handleMobileMenuClose}
+        >
+          Crear usuario
+        </MenuItem>
+        <MenuItem
+          component={Link}
+          to="/edit-user"
+          onClick={handleMobileMenuClose}
+        >
+          Modificar usuario
+        </MenuItem>
         <MenuItem onClick={handleMobileMenuClose}>
-          <Typography
-            onClick
-            style={{ marginRight: "1rem"}}
-          >
-            INGRESAR
+          <Typography onClick={() => logout()} style={{ marginRight: "1rem" }}>
+            Salir
           </Typography>
-
-
         </MenuItem>
       </Menu>
     </>
   );
-
+  const renderMenu = (
+    <>
+      <Menu
+        id="menu-appbar"
+        anchorEl={anchorEl}
+        anchorOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        transformOrigin={{
+          vertical: "top",
+          horizontal: "right",
+        }}
+        open={!!anchorEl}
+        onClose={handleClose}
+      >
+        <MenuItem component={Link} to="/create-user" onClick={handleClose}>
+          Crear usuario
+        </MenuItem>
+        <MenuItem component={Link} to="/edit-user" onClick={handleClose}>
+          Modificar usuario
+        </MenuItem>
+      </Menu>
+    </>
+  );
   return (
     <>
       <CssBaseline />
@@ -141,7 +189,20 @@ const Header = (props) => {
         <Toolbar disableGutters={true}>
           <Grid container alignItems="center" className={classes.container}>
             <Grid item>
-              <div className={classes.menuButton}></div>
+              <IconButton
+                color="inherit"
+                aria-label="Open drawer"
+                onClick={handleDrawer}
+                className={classes.menuButton}
+              >
+                <MenuIcon
+                  classes={{
+                    root: open
+                      ? classes.menuButtonIconOpen
+                      : classes.menuButtonIconClosed,
+                  }}
+                />
+              </IconButton>
             </Grid>
             <Grid item>
               <Link to="/">
@@ -151,19 +212,22 @@ const Header = (props) => {
 
             <Grid item>
               <div className={classes.sectionDesktop}>
-              
-                {/* <IconButton component={Link} to="/login/iniciar-sesion"  color="primary" style={{ backgroundColor: "green", marginRight: "0.2rem" }}>
+                <IconButton
+                  aria-owns={!!anchorEl ? "menu-appbar" : undefined}
+                  aria-haspopup="true"
+                  onClick={handleMenu}
+                  color="inherit"
+                >
+                  <Typography>Opciones</Typography>
+                </IconButton>
+                <IconButton color="inherit">
                   <Typography
-                    // onClick={() => loginWithRedirect()}
-                    
-                    alignItems="center"
-                    className={classes.textButton}
-                    style={{ color: "#FFFFFF"}}
+                    onClick={() => logout()}
+                    style={{ marginRight: "1rem" }}
                   >
-                    Ingresar
+                    Salir
                   </Typography>
-                  
-                </IconButton> */}
+                </IconButton>
               </div>
               <div className={classes.sectionMobile}>
                 <IconButton
@@ -176,6 +240,7 @@ const Header = (props) => {
                 </IconButton>
               </div>
               {renderMobileMenu}
+              {renderMenu}
             </Grid>
           </Grid>
         </Toolbar>

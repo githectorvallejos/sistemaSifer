@@ -7,6 +7,8 @@ import {
     AccordionDetails,
   } from "@material-ui/core";
 import ExpandMore from "@material-ui/icons/ExpandMore";
+import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+
 
 
 
@@ -44,6 +46,9 @@ const TurnoActual = () => {
                     </Typography>
                     <Typography variant="subtitle2" style={{ width: '33%', color: "text.secondary" }}>Turno Actual: 08:00 - 13:00 TM</Typography>
                     <Typography variant="inherit" style={{ color: "text.secondary" }}>Sector: Oficina</Typography>
+                    <FiberManualRecordIcon fontSize="small" style={{marginLeft: "4rem", color: '#4caf50' }}/> 
+                    <Typography variant="inherit" style={{color: "text.secondary" }}>Estado: Conectado </Typography>
+                    
 
                 </AccordionDetails>
             </Accordion>
