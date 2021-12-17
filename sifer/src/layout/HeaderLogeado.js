@@ -25,6 +25,9 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import MailIcon from "@material-ui/icons/Mail";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import MoreIcon from "@material-ui/icons/MoreVert";
+import {UserContext} from "context/UserContext";
+import { useContext } from "react";
+
 
 const drawerWidth = 220;
 
@@ -95,7 +98,11 @@ const styles = (theme) => ({
 const Header = (props) => {
   //   const classes = styles();
   const { open, setOpen, classes } = props;
-  const { logout } = useAuth0();
+  const { user, setUser } = useContext(UserContext);
+
+  const logout = () => {
+    console.log("SALIRRRR");
+  } 
 
   const [anchorEl, setAnchorEl] = useState(null);
   const handleDrawer = () => {
@@ -143,11 +150,13 @@ const Header = (props) => {
         >
           Modificar usuario
         </MenuItem>
+        {(user.user_id === "100")? 
         <MenuItem onClick={handleMobileMenuClose}>
           <Typography onClick={() => logout()} style={{ marginRight: "1rem" }}>
             Salir
           </Typography>
         </MenuItem>
+        : null }
       </Menu>
     </>
   );
@@ -212,6 +221,8 @@ const Header = (props) => {
 
             <Grid item>
               <div className={classes.sectionDesktop}>
+              {(user.user_id === "100")? 
+                <>
                 <IconButton
                   aria-owns={!!anchorEl ? "menu-appbar" : undefined}
                   aria-haspopup="true"
@@ -220,14 +231,19 @@ const Header = (props) => {
                 >
                   <Typography>Opciones</Typography>
                 </IconButton>
+                
                 <IconButton color="inherit">
-                  <Typography
-                    onClick={() => logout()}
-                    style={{ marginRight: "1rem" }}
-                  >
-                    Salir
-                  </Typography>
-                </IconButton>
+                  
+                <Typography
+                  onClick={() => logout()}
+                  style={{ marginRight: "1rem", color: "red"}}
+                >
+                  Salir
+                </Typography>
+              </IconButton>
+              </>
+              : null}
+                
               </div>
               <div className={classes.sectionMobile}>
                 <IconButton

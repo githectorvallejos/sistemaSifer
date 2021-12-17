@@ -2,7 +2,7 @@
   base = "/"
   command = "yarn build"
   publish = "build/"
-  environment = {REACT_APP_HOST = "https://nasini-back.herokuapp.com"}
+  environment = {REACT_APP_HOST = ""}
 
 [[redirects]]
   from = "/*"

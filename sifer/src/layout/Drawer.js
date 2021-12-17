@@ -10,9 +10,11 @@ import Header from "./HeaderDrawer";
 // import HeaderAuth from "./HeaderDrawerAuth";
 import Footer from "./footer";
 import ListDrawer from "./ListDrawer";
+import {UserContext} from "context/UserContext";
 
 import { useAuth0 } from "@auth0/auth0-react";
 import HeaderLogeado from "./HeaderLogeado";
+import { useContext } from "react";
 
 const drawerWidth = 360;
 
@@ -66,14 +68,20 @@ const styles = (theme) => ({
 });
 
 const MiniDrawer = (props) => {
-  const [logeado, setLogeado] = useState(true);
- 
+  // const [logeado, setLogeado] = useState(null);
+  const { user, setUser } = useContext(UserContext);
+  console.log("DRAWER user", user);
+  // if (user.user_id === ""){
+  //    setLogeado(true);
+  //  }else{
+  //    setLogeado(false);
+  //  }
   const [open, setOpen] = useState(true);
 
   const { classes, routes } = props;
   return (
     <div className={classes.root}>
-      {logeado ? (
+      {(user.user_id !== null) ? (
         <>
       <Header open={open} setOpen={setOpen} />
 
@@ -81,7 +89,7 @@ const MiniDrawer = (props) => {
             variant="permanent"
             className={classNames(classes.drawer, {
               [classes.drawerOpen]: open,
-              [classes.drawerClose]: !open,
+              [classes.drawerClose]: !open, 
             })}
             classes={{
               paper: classNames({

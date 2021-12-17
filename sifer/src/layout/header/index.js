@@ -43,7 +43,7 @@ const Header = () => {
         sm={9}
         xs={9}
       >
-        <img src={Logo} className={classes.logo} alt="logo" />
+        {/* <img src={Logo} className={classes.logo} alt="logo" /> */}
       </Grid>
 
       <Grid

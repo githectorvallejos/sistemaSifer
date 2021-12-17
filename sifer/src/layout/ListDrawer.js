@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ListDrawer = () => {
   const classes = useStyles();
-  const [userData, setUserData] = useContext(UserContext);
+  // const [userData, setUserData] = useContext(UserContext);
   const [openGestion1, setOpenGestion1] = useState(false);
   const [openGestion2, setOpenGestion2] = useState(false);
   const [openGestion3, setOpenGestion3] = useState(false);
